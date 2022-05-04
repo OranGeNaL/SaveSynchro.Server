@@ -6,6 +6,7 @@ namespace SaveSyncro.Contexts;
 public class SaveContext : DbContext
 {
     public DbSet<Save> Saves { get; set; }
+    public DbSet<SaveFile> SaveFiles { get; set; }
 
     public SaveContext()
     {

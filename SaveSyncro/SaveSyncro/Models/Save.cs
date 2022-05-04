@@ -6,21 +6,21 @@ public class Save
 {
     [Key]
     public Guid ID { get; set; }
-    public User Owner { get; set; }
+    public string Owner { get; set; }
     public string GameName { get; set; }
     public string SaveName { get; set; }
     public DateTime LastUpdateTime { get; set; }
-    public SaveFile Data { get; set; }
+    public string FileID { get; set; }
     
     public Save() { }
 
-    public Save(User owner, string gameName, string saveName, DateTime lastUpdateTime, SaveFile data)
+    public Save(string owner, string gameName, string saveName, DateTime lastUpdateTime, string fileId)
     {
         Owner = owner;
         GameName = gameName;
         SaveName = saveName;
         LastUpdateTime = lastUpdateTime;
-        Data = data;
-        ID = new Guid();
+        FileID = fileId;
+        ID = Guid.NewGuid();
     }
 }

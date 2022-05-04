@@ -12,7 +12,7 @@ public static class ConfigManager
         }
         else
         {
-            RootDir = "~/Documents/saves";
+            RootDir = "saves";
         }
 
         Directory.CreateDirectory(RootDir);
