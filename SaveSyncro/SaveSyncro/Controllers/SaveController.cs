@@ -71,7 +71,6 @@ public class SaveController : ControllerBase
             SaveFile newFile = new SaveFile(saveName, path);
             newFile.UpdateChecksum();
             
-            Console.WriteLine(newFile.ID.ToString());
             Save newSave = new Save(HttpContext.User.Identity.Name, gameName, saveName, DateTime.Now.ToUniversalTime(), newFile.ID.ToString());
 
             await saveDb.AddAsync(newSave);
@@ -108,12 +107,23 @@ public class SaveController : ControllerBase
                     
                     saveDb.Update(file);
                     saveDb.Update(save);
+
+                    await saveDb.SaveChangesAsync();
                     
                     return Ok(save);
                 }
             }
         }
-
         return BadRequest();
+    }
+
+    [HttpGet("get/{fileID}")]
+    [Authorize]
+    public async Task<ActionResult<IResult>> GetSaveFile(string fileID)
+    {
+        var file = saveDb.SaveFiles.FirstOrDefault(x => x.ID.ToString() == fileID);
+        if(file != null)
+            await HttpContext.Response.SendFileAsync(file.Path);
+        return NotFound();
     }
 }
