@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  postgres:
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=1234
+    ports:
+      - 5432:5432
+    image: postgres
