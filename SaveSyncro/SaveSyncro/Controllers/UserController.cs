@@ -25,7 +25,7 @@ public class UserController : ControllerBase
         db = context;
     }
 
-    [HttpPost("register")]
+    [HttpPost]
     public async Task<ActionResult<IResult>> RegisterNewUser(User newUser)
     {
         if (db.Users.FirstOrDefault(x => x.Login == newUser.Login) != null)
@@ -49,6 +49,35 @@ public class UserController : ControllerBase
         
         db.Users.Add(user);
         await db.SaveChangesAsync();
+        
+        var response = new LoginResponse()
+        {
+            AccessToken = encodedJWT,
+            Login = user.Login
+        };
+
+        return Ok(response);
+    }
+
+    [HttpPut]
+    public async Task<ActionResult<LoginResponse>> UserLogin(User user)
+    {
+        if (db.Users.FirstOrDefault(x => x.Login == user.Login) == null)
+            return NotFound();
+        
+        var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, user.Login),
+            new Claim("UserID", user.UserID)
+        };
+        var jwt = new JwtSecurityToken(
+            issuer: AuthOptions.Issuer,
+            audience: AuthOptions.Audience,
+            claims: claims,
+            expires: DateTime.UtcNow.Add(TimeSpan.FromDays(10)), // время действия 2 минуты
+            signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
+        
+        var encodedJWT = new JwtSecurityTokenHandler().WriteToken(jwt);
         
         var response = new LoginResponse()
         {

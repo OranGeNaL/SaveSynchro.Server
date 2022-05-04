@@ -29,6 +29,8 @@ public class SaveFile
                 string result = BitConverter.ToString(checkSum).Replace("-", String.Empty);
 
                 this.CheckSum = result;
+                
+                //Console.WriteLine(result);
             }
     }
 }
