@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="SaveSynchroDB">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.32">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.39">
     <root id="1">
       <DateStyle>mdy</DateStyle>
       <IntrospectionStateNumber>746</IntrospectionStateNumber>
@@ -8232,15 +8232,15 @@ true posixrules
       <TypeId>25</TypeId>
     </column>
     <index id="512" parent="508" name="PK_Users">
-      <ClassIds>3126</ClassIds>
       <ColNames>UserID</ColNames>
-      <CollationIds>100</CollationIds>
-      <CollationNames>default</CollationNames>
       <ObjectId>16390</ObjectId>
       <Primary>1</Primary>
       <StateNumber>735</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
+      <ClassIds>3126</ClassIds>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
     </index>
     <key id="513" parent="508" name="PK_Users">
       <ColNames>UserID</ColNames>

@@ -42,7 +42,7 @@ public class UserController : ControllerBase
             issuer: AuthOptions.Issuer,
             audience: AuthOptions.Audience,
             claims: claims,
-            expires: DateTime.UtcNow.Add(TimeSpan.FromDays(10)), // время действия 2 минуты
+            expires: DateTime.UtcNow.Add(TimeSpan.FromDays(10)), // время действия 10 дней
             signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
         
         var encodedJWT = new JwtSecurityTokenHandler().WriteToken(jwt);
@@ -62,7 +62,7 @@ public class UserController : ControllerBase
     [HttpPut]
     public async Task<ActionResult<LoginResponse>> UserLogin(User user)
     {
-        if (db.Users.FirstOrDefault(x => x.Login == user.Login) == null)
+        if (await db.Users.FirstOrDefaultAsync(x => x.Login == user.Login) == null)
             return NotFound();
         
         var claims = new List<Claim>
