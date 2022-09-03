@@ -1,0 +1,15 @@
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.deps.json
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.runtimeconfig.json
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.dll
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/bin/Debug/net6.0/ref/ConsoleApp1.dll
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/bin/Debug/net6.0/ConsoleApp1.pdb
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.AssemblyReference.cache
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.AssemblyInfoInputs.cache
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.AssemblyInfo.cs
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.CoreCompileInputs.cache
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/obj/Debug/net6.0/ref/ConsoleApp1.dll
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.pdb
+/Users/orangenal/Documents/SaveSynchro.Server/ConsoleApp1/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.genruntimeconfig.cache
