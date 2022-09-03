@@ -1,4 +1,5 @@
 using System.Text;
+using Elastic.Apm.NetCoreAll;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
@@ -32,6 +33,8 @@ builder.Services.AddControllers()
     .AddNewtonsoftJson();
 
 var app = builder.Build();
+
+app.UseAllElasticApm(builder.Configuration);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
